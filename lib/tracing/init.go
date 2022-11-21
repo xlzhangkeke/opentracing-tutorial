@@ -19,7 +19,7 @@ func Init(service string) (opentracing.Tracer, io.Closer) {
 		},
 		Reporter: &config.ReporterConfig{
 			LogSpans:          true,
-			CollectorEndpoint: "http://10.95.84.100:14268/api/traces",
+			CollectorEndpoint: "http://127.0.0.1:14268/api/traces",
 		},
 	}
 	tracer, closer, err := cfg.NewTracer(config.Logger(jaeger.StdLogger))
